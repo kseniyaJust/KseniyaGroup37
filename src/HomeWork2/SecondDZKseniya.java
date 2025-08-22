@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package HomeWork2;
+
 import java.util.Scanner;
 
 public class SecondDZKseniya {
@@ -7,7 +8,7 @@ public class SecondDZKseniya {
     //Заставляет ввести число
     public static int checkRightInput(Scanner scan) { //static - привязывает метод к классу. Иначе нам нужно создавать объект класса и мы не сможем обратиться к методу напрямую из main
         //TODO: Немного сокращенная версия чата
-        int number = 0;
+        int number;
         while (true){
             try{ //пытается выполнить код и если ловит исключение то переходит в блок catch
                 number = Integer.parseInt(scan.nextLine()); // конструкция Integer.parseInt пробует преобразовать введенную строку в int
