@@ -1,4 +1,4 @@
-package HomeWork4;
+package HomeWork4.lessonTasks;
 
 public class HardTask {
     //        Сложные:    1. Поиск второго по величине числа. Найди второй наибольший элемент без сортировки
@@ -56,12 +56,11 @@ public class HardTask {
         int max = arrSecondMax[arrSecondMax.length-1];
         int secondMax=0;
         for(int i =arrSecondMax.length-1;i>=0;i--){
-            if(arrSecondMax[i] == max)
-                continue;
-            else{
+            if(arrSecondMax[i] != max){
                 secondMax = arrSecondMax[i];
                 break;
             }
+
         }
         System.out.println("Second max of array: " + secondMax);
 

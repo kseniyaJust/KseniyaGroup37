@@ -1,6 +1,8 @@
-package HomeWork4;
+package HomeWork4.lessonTasks;
 
 import java.util.Arrays;
+
+//это задания которые кидались в тгк. я искренне думала, что это дз
 
 public class ArraysKseniya {
 
