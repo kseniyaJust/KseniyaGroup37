@@ -1,6 +1,5 @@
-package HomeWork3;
+package HomeWork4;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArraysKseniya {
@@ -56,13 +55,13 @@ public class ArraysKseniya {
         int[] arrWithZero = RandomNumbers(5, 0, 3);
         ShowArray(arrWithZero, 21);
         //Вариант с сохранением в одномерный массив
-        int countNotZeros =0;
+        int countNotZeros = 0;
         for (int j : arrWithZero) {
             if (j != 0)
                 countNotZeros++;
         }
-        if(countNotZeros !=0){
-            int j =0;
+        if (countNotZeros != 0) {
+            int j = 0;
             int[] arrWithoutZeros = new int[countNotZeros];
             for (int k : arrWithZero) {
                 if (k != 0) {
@@ -70,7 +69,7 @@ public class ArraysKseniya {
                     j++;
                 }
             }
-            ShowArray(arrWithoutZeros,22);
+            ShowArray(arrWithoutZeros, 22);
         }
         System.out.println("-------------------------------");
         //Вариант с сохранением в динамичный ArrayList, который является гибким по размеру
@@ -82,13 +81,13 @@ public class ArraysKseniya {
         ShowArray(listWithoutZero,22);*/
 
 //        3. Массив читается одинаково слева направо и справа налево?
-        int[] arrPalindrome = {0,1,2,0,0};
-        int midSize = arrPalindrome.length/2;
-        int end = arrPalindrome.length-1;
+        int[] arrPalindrome = {0, 1, 2, 0, 0};
+        int midSize = arrPalindrome.length / 2;
+        int end = arrPalindrome.length - 1;
         boolean palindrome = true;
-        for(int begining=0;begining<=midSize;begining++){
-            if(arrPalindrome[begining]!=arrPalindrome[end]){
-                palindrome=false;
+        for (int begining = 0; begining <= midSize; begining++) {
+            if (arrPalindrome[begining] != arrPalindrome[end]) {
+                palindrome = false;
                 break;
             }
             --end;
@@ -97,50 +96,51 @@ public class ArraysKseniya {
         System.out.println("-------------------------------");
 
 //        4. Сдвинь элементы массива на 1 позицию вправо, последний элемент переходит в начало.
-        int[] arrToRight = RandomNumbers(4,1,10);
-        ShowArray(arrToRight,41);
-        int nextNumber = arrToRight[arrToRight.length-1],previosNumber;
-        for(int i =0;i<arrToRight.length;i++){
-            previosNumber=arrToRight[i];
+        int[] arrToRight = RandomNumbers(4, 1, 10);
+        ShowArray(arrToRight, 41);
+        int nextNumber = arrToRight[arrToRight.length - 1], previosNumber;
+        for (int i = 0; i < arrToRight.length; i++) {
+            previosNumber = arrToRight[i];
             arrToRight[i] = nextNumber;
             nextNumber = previosNumber;
         }
-        ShowArray(arrToRight,42);
+        ShowArray(arrToRight, 42);
         System.out.println("-------------------------------");
 
 //        5. Удалить элемент по значению. Удали первое вхождение заданного значения из массива. Верни новый массив без него.
-        int[] arrayWithFirstNumber = RandomNumbers(5,0,10);
-        ShowArray(arrayWithFirstNumber,51);
-        int[] arrayWithoutFirstNumber = Arrays.copyOfRange(arrayWithFirstNumber,1,arrayWithFirstNumber.length);
-        ShowArray(arrayWithoutFirstNumber,52);
+        int[] arrayWithFirstNumber = RandomNumbers(5, 0, 10);
+        ShowArray(arrayWithFirstNumber, 51);
+        int[] arrayWithoutFirstNumber = Arrays.copyOfRange(arrayWithFirstNumber, 1, arrayWithFirstNumber.length);
+        ShowArray(arrayWithoutFirstNumber, 52);
         System.out.println("-------------------------------");
 
         //        6. Найди среднее арифметическое значений в массиве без учета максимального и минимального значения.
-        int[] arrMidNumber = RandomNumbers(6,1,5);
-        ShowArray(arrMidNumber,6);
+        int[] arrMidNumber = RandomNumbers(6, 1, 10);
+        ShowArray(arrMidNumber, 6);
         Arrays.sort(arrMidNumber);
-        int min = arrMidNumber[0],max = arrMidNumber[arrMidNumber.length-1];
-        int countNumberFirMid =0,numbersForMid=0;
-        for(int element:arrMidNumber){
-            if(element == min || element == max)
+        int min = arrMidNumber[0], max = arrMidNumber[arrMidNumber.length - 1];
+        int countNumberFirMid = 0, numbersForMid = 0;
+        for (int element : arrMidNumber) {
+            if (element == min || element == max)
                 continue;
-            numbersForMid+=element;
+            numbersForMid += element;
             countNumberFirMid++;
         }
-        System.out.println("Mid number of array: "+numbersForMid/countNumberFirMid);
+        if(countNumberFirMid != 0)
+            System.out.println("Mid number of array: " + numbersForMid / countNumberFirMid);
         System.out.println("-------------------------------");
 
         //        7. Создай два новых массива: один из положительных, другой из отрицательных чисел исходного.
-        int[] arrayPlus = RandomNumbers(5,1,10);
-        ShowArray(arrayPlus,71);
-        int[] arrayNegative = Arrays.copyOf(arrayPlus,arrayPlus.length);
-        for (int i =0;i<arrayNegative.length;i++)
+        int[] arrayPlus = RandomNumbers(5, 1, 10);
+        ShowArray(arrayPlus, 71);
+        int[] arrayNegative = Arrays.copyOf(arrayPlus, arrayPlus.length);
+        for (int i = 0; i < arrayNegative.length; i++)
             arrayNegative[i] *= -1;
-        ShowArray(arrayNegative,72);
+        ShowArray(arrayNegative, 72);
         System.out.println("-------------------------------");
 
-//        Сложные:
-//        1. Поиск второго по величине числа. Найди второй наибольший элемент без сортировки
-        //заморочаться и разобраться с быстрой сортировкой
+        //Сложное
+        HardTask.hardTask();
+
     }
 }
