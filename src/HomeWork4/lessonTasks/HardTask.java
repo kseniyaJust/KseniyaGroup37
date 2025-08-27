@@ -1,8 +1,11 @@
 package HomeWork4.lessonTasks;
 
+import java.util.Arrays;
+
 public class HardTask {
     //        Сложные:    1. Поиск второго по величине числа. Найди второй наибольший элемент без сортировки
-    //Алгоритм решения: Отсортировать массив с помощью быстрой сортировки и после выбрать элемент который стоит перед максимальным
+    //Не знаю правильно ли поняла. Я надеюсь что "без сортировки" имелосьь ввиду без метода Arrays, а ручное не учитывалось
+
 
     //сортировка массива относительно выбранного диапазона, где все что ниже выбранной опорной точки (pivot) находится слева
     private static int partition(int[] arr,int low,int high){
@@ -43,13 +46,10 @@ public class HardTask {
 
 
     public static void hardTask() {
-
-        int[] arrSecondMax = {23, 9, 40, 6, 10};
-        System.out.print("Array for hard task: ");
-        for (int i : arrSecondMax) {
-            System.out.print(i + " ");
-        }
-        System.out.print("\n");
+        int[] arrSecondMax = {3, 9, 40, 6, 23};
+        System.out.println("Array for hard task: " + Arrays.toString(arrSecondMax)) ;
+        //с ручной сортировкой
+        /*
 
         quickSort(arrSecondMax, 0, arrSecondMax.length - 1);
 
@@ -62,8 +62,33 @@ public class HardTask {
             }
 
         }
-        System.out.println("Second max of array: " + secondMax);
+        System.out.println("Second max of array: " + secondMax);*/
+        //по другому
+        /*int max = 0;
+        for (int el: arrSecondMax){
+            if(max<el)
+                max=el;
+        }
+        int delta = max-arrSecondMax[0];
+        int secondMax = arrSecondMax[0];
 
+        for (int el: arrSecondMax){
+            if(delta > max-el && max !=el){
+                secondMax = el;
+                delta = max-el;
+            }
+        }
+        System.out.println("Second max number " + secondMax);*/
+        //еще по другому
+        int max =arrSecondMax[0], secondMax =0;
+        for (int el: arrSecondMax){
+            if(max<el){
+                secondMax = max;
+                max=el;
+            } else if(el<max && secondMax<el)
+                secondMax = el;
+        }
+        System.out.println(secondMax);
     }
 
 }

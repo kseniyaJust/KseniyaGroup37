@@ -1,6 +1,7 @@
 package HomeWork4.lessonTasks;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 //это задания которые кидались в тгк. я искренне думала, что это дз
 
@@ -100,20 +101,43 @@ public class ArraysKseniya {
 //        4. Сдвинь элементы массива на 1 позицию вправо, последний элемент переходит в начало.
         int[] arrToRight = RandomNumbers(4, 1, 10);
         ShowArray(arrToRight, 41);
-        int nextNumber = arrToRight[arrToRight.length - 1], previosNumber;
-        for (int i = 0; i < arrToRight.length; i++) {
-            previosNumber = arrToRight[i];
-            arrToRight[i] = nextNumber;
-            nextNumber = previosNumber;
+//        int nextNumber = arrToRight[arrToRight.length - 1], previosNumber;
+//        for (int i = 0; i < arrToRight.length; i++) {
+//            previosNumber = arrToRight[i];
+//            arrToRight[i] = nextNumber;
+//            nextNumber = previosNumber;
+//        }
+//        ShowArray(arrToRight, 42);
+
+        int temp = arrToRight[arrToRight.length - 1];
+        for (int i = arrToRight.length - 1; i > 0; i--) {
+            arrToRight[i] = arrToRight[i - 1];
         }
+        arrToRight[0] = temp;
         ShowArray(arrToRight, 42);
         System.out.println("-------------------------------");
 
 //        5. Удалить элемент по значению. Удали первое вхождение заданного значения из массива. Верни новый массив без него.
-        int[] arrayWithFirstNumber = RandomNumbers(5, 0, 10);
+        int[] arrayWithFirstNumber = RandomNumbers(7, 0, 5);
         ShowArray(arrayWithFirstNumber, 51);
-        int[] arrayWithoutFirstNumber = Arrays.copyOfRange(arrayWithFirstNumber, 1, arrayWithFirstNumber.length);
-        ShowArray(arrayWithoutFirstNumber, 52);
+
+        System.out.println("Enter letter for delete ");
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        if(Arrays.binarySearch(arrayWithFirstNumber,number) ==0){
+            int[] resultArray = new int[arrayWithFirstNumber.length - 1];
+            int iForResult = 0;
+            boolean change = false;
+            for (int i = 0; i < arrayWithFirstNumber.length; i++) {
+                if(arrayWithFirstNumber[i] == number && !change){
+                    change = true;
+                    continue;
+                }
+                resultArray[iForResult++] = arrayWithFirstNumber[i];
+            }
+            ShowArray(resultArray, 52);
+        } else System.out.println("No number like that found");
+
         System.out.println("-------------------------------");
 
         //        6. Найди среднее арифметическое значений в массиве без учета максимального и минимального значения.
@@ -128,17 +152,30 @@ public class ArraysKseniya {
             numbersForMid += element;
             countNumberFirMid++;
         }
-        if(countNumberFirMid != 0)
+        if (countNumberFirMid != 0)
             System.out.println("Mid number of array: " + numbersForMid / countNumberFirMid);
         System.out.println("-------------------------------");
 
         //        7. Создай два новых массива: один из положительных, другой из отрицательных чисел исходного.
-        int[] arrayPlus = RandomNumbers(5, 1, 10);
-        ShowArray(arrayPlus, 71);
-        int[] arrayNegative = Arrays.copyOf(arrayPlus, arrayPlus.length);
-        for (int i = 0; i < arrayNegative.length; i++)
-            arrayNegative[i] *= -1;
-        ShowArray(arrayNegative, 72);
+        int[] arrayDefault = RandomNumbers(8, -3, 10);
+        ShowArray(arrayDefault, 71);
+        int countNegative =0 ;
+        for (int j : arrayDefault) {
+            if (j < 0)
+                countNegative++;
+        }
+        int[] arrayPos = new int[arrayDefault.length-countNegative];
+        int[] arrayNeg = new int[countNegative];
+        int iPos=0, iNeg=0;
+        for(int el: arrayDefault){
+            if(el<0)
+                arrayNeg[iNeg++] = el;
+            else if(el>0)
+                arrayPos[iPos++] = el;
+
+        }
+        ShowArray(arrayPos,52);
+        ShowArray(arrayNeg,53);
         System.out.println("-------------------------------");
 
         //Сложное
