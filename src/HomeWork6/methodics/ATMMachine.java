@@ -8,9 +8,7 @@ import java.util.Arrays;
 public class ATMMachine {
     int[] bills;
     int[] countBils;
-    int count20;
-    int count50;
-    int count100;
+
 
     int totalSum;
 
@@ -34,17 +32,16 @@ public class ATMMachine {
     }
      //Сделать метод для добавления денег в банкомат.
     public void addBill(int money,int type){
-        showbills();
+        System.out.println(" Bills " + countBils.toString());
         switch (type){
-            case 20->count20+=money;
-            case 50->count50+=money;
-            case 100-> count100+=money;
+            case 20->countBils[0]+=money;
+            case 50->countBils[1]+=money;
+            case 100-> countBils[2]+=money;
         }
-        showbills();
+        System.out.println(" Bills " + countBils.toString());
+
     }
-    public void showbills(){
-        System.out.println("Count of 20: " + count20 + " Count of 50: " + count50 + " Count of 100: " + count100);
-    }
+
     // Сделать функцию, снимающую деньги, которая принимает сумму денег, а возвращает булевое значение - успешность выполнения
     //операции. При снятии денег, функция должна распечатывать каким количеством купюр
     //какого номинала выдаётся сумма.
