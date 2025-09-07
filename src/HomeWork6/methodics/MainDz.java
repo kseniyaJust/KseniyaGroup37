@@ -33,7 +33,7 @@ public class MainDz {
         System.out.println("Enter money for withdraw: ");
         int money = scanner.nextInt();
         if(money%10 ==0){
-            ATMMachine atmMachine = new ATMMachine();
+            ATMMachine atmMachine = new ATMMachine(10,10,10);
             System.out.println("Operation to withdraw " +money +": "+ atmMachine.withDrawBill(money));
         }
         scanner.close();
