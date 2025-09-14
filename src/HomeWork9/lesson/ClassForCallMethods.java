@@ -26,7 +26,7 @@ public class ClassForCallMethods {
         String numberLine = scanner.next();
         System.out.println("Enter number to compare and you see numbers that less");
         int numberForCompare = scanner.nextInt();
-        stringWork.findLessNumbers(numberLine,numberForCompare);
+        stringWork.findLessNumbers(numberLine, numberForCompare);
         System.out.println("----------------------------TASK 3");
 
         //4. Метод isPalindrome(String input) проверяет, является ли строка палиндромом. Условие: Игнорировать регистр и пробелы.

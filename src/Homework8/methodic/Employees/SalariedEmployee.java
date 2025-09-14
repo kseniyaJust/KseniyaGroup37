@@ -1,6 +1,6 @@
 package Homework8.methodic.Employees;
 
-public class SalariedEmployee extends Employee{
+public class SalariedEmployee extends Employee {
     int salary;
 
     public SalariedEmployee(int id, String name, int salary) {
@@ -10,6 +10,6 @@ public class SalariedEmployee extends Employee{
 
     @Override
     public float calculateSalary() {
-        return salary + salary*0.2f;
+        return salary + salary * 0.2f;
     }
 }

@@ -4,7 +4,10 @@ package Homework8.methodic.Animals;
 //Реализуй его в классах Dog и Bird.
 public interface Animal {
     void makeSound();
+
     void move();
+
     void eat();
+
     void sleep();
 }

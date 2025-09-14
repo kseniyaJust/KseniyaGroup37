@@ -21,19 +21,19 @@ public class MainClass {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter animal (1 - dog, 2 - tiger, other - rabbit)");
-        try{
+        try {
             int number = scanner.nextInt();
             Animal animal;
-            switch (number){
-                case 1 ->animal = Dog.createDog("dog"); //создание объекта не через конструктор а через метод
-                case 2 ->animal = new Tiger("tiger");
-                default ->animal = new Rabbit("rabbit");
+            switch (number) {
+                case 1 -> animal = Dog.createDog("dog"); //создание объекта не через конструктор а через метод
+                case 2 -> animal = new Tiger("tiger");
+                default -> animal = new Rabbit("rabbit");
             }
             animal.voice();
             System.out.println("Feed your animal (without whitespaces): ");
             String inputFood = scanner.next();
             animal.eat(inputFood);
-        }catch (InputMismatchException r){
+        } catch (InputMismatchException r) {
             System.out.println("I need number");
         }
         scanner.close();
