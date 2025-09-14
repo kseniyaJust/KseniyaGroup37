@@ -1,4 +1,4 @@
-package Homework8.methodic.Animals;
+package HomeWork8.methodic.Animals;
 
 
 public class Bird implements Animal {

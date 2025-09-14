@@ -1,4 +1,4 @@
-package Homework8.methodic.Employees;
+package HomeWork8.methodic.Employees;
 
 public class CommissionEmployee extends Employee {
     int soldProducts;

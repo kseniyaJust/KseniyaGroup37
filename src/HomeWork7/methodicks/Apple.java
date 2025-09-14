@@ -1,4 +1,4 @@
-package Homework7.methodicks;
+package HomeWork7.methodicks;
 
 
 public class Apple {

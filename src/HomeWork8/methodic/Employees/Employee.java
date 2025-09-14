@@ -1,4 +1,4 @@
-package Homework8.methodic.Employees;
+package HomeWork8.methodic.Employees;
 
 //2. Абстрактный класс Employee с полями name, id, методом displayInfo() и абстрактным методом calculateSalary().
 //Наследники: SalariedEmployee(Штатный сотрудник), HourlyEmployee(Почасовой сотрудник), CommissionEmployee(Комиссионный сотрудник).

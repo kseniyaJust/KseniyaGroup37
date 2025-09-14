@@ -1,4 +1,4 @@
-package Homework8.lesson;
+package HomeWork8.lesson;
 
 
 public class MainClass {

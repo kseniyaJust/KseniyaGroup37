@@ -1,4 +1,4 @@
-package Homework7.methodicks;
+package HomeWork7.methodicks;
 
 //Задача 1:
 //Создать программу для имитации работы клиники. Пусть в клинике будет три врача:

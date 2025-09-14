@@ -1,11 +1,11 @@
-package Homework8.methodic;
+package HomeWork8.methodic;
 
-import Homework8.methodic.Animals.Animal;
-import Homework8.methodic.Animals.Bird;
-import Homework8.methodic.Animals.Dog;
-import Homework8.methodic.Employees.CommissionEmployee;
-import Homework8.methodic.Employees.HourlyEmployee;
-import Homework8.methodic.Employees.SalariedEmployee;
+import HomeWork8.methodic.Animals.Animal;
+import HomeWork8.methodic.Animals.Bird;
+import HomeWork8.methodic.Animals.Dog;
+import HomeWork8.methodic.Employees.CommissionEmployee;
+import HomeWork8.methodic.Employees.HourlyEmployee;
+import HomeWork8.methodic.Employees.SalariedEmployee;
 
 import java.util.Scanner;
 

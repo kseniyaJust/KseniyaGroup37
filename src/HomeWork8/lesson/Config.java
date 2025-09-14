@@ -1,4 +1,4 @@
-package Homework8.lesson;
+package HomeWork8.lesson;
 
 //Создай класс Config с static final полями APP_NAME, VERSION, MAX_USERS.
 // Заполните эти значения в статическом блоке через VM options.
