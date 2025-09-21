@@ -15,10 +15,11 @@ public class ClassForCallMethods {
         //Ma
         //Mam
         //Mama
-        //2. Кол-во слов в строке
         System.out.println("Enter line ");
         String line = scanner.nextLine();
-        stringWork.countWordsAndShowTheLine(line);
+        stringWork.showTheLine(line);
+        //2. Кол-во слов в строке
+        stringWork.countWords(line);
         System.out.println("---------------------------------- TASK 1_2");
 
         //3. Пользователь вводит строку из чисел через запятую(например 3,8,9,23,27) и число. Нужно вывести числа из строки которые меньше чем число которое ввел пользователь.

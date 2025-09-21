@@ -1,24 +1,34 @@
 package HomeWork9.lesson;
 
-
+//TODO: Исправить String на StringBuilder где нужно
 public class StringWork {
 
-    //1_2
-    public void countWordsAndShowTheLine(String line) {
+    //1
+    public void showTheLine(String line) {
         line = line.trim();
+        StringBuilder res = new StringBuilder("");
         if (!line.isEmpty()) {
-            String copyLine = "";
-            int words = 1;
-            for (char letter : line.toCharArray()) {
-                copyLine += letter;
-                if (letter == ' ')
-                    words++;
-                System.out.println(copyLine);
+            for (int i = 0; i < line.length(); i++) {
+                res.append(line.charAt(i));
+                System.out.println(res);
             }
-            System.out.println("Count of words: " + words);
         } else
             System.out.println("Your line is empty");
 
+    }
+
+    //2
+    public void countWords(String line) {
+        line = line.replaceAll(",", "").replace("!", "");
+        String[] resultArray = line.split(" ");
+
+        int count = 0;
+        for (String word : resultArray) {
+            if (!word.isBlank()) {
+                count++;
+            }
+        }
+        System.out.println("Count of words " + count);
     }
 
     //3
@@ -26,7 +36,7 @@ public class StringWork {
         String[] splitLine = line.split(",");
         int numberInLine = 0;
         for (String symbol : splitLine) {
-            if (!symbol.equals(",")) {
+            if (!symbol.equals(" ")) {
                 try {
                     numberInLine = Integer.parseInt(symbol);
                     if (numberInLine < number)
@@ -67,7 +77,6 @@ public class StringWork {
             }
         }
         compressLine += "" + repeatElement + countRepeatelemts;
-
         return (compressLine.length() >= input.length()) ? input : compressLine;
 
     }
