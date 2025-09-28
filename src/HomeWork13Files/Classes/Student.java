@@ -1,4 +1,4 @@
-package HomeWork13Files;
+package HomeWork13Files.Classes;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class Student{
         ArrayList<String> passed = new ArrayList<>();
 
         // Чтение файла students.txt
-        try (BufferedReader reader = new BufferedReader(new FileReader("students.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/HomeWork13Files/Files/students.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -25,22 +25,22 @@ public class Student{
                         passed.add(name + " " + score);
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("Некорректный балл у студента: " + line);
+                    System.out.println("Invalid mark: " + line);
                 }
             }
         } catch (IOException e) {
-            System.err.println("Ошибка при чтении students.txt: " + e.getMessage());
+            System.err.println("Error reading students " + e.getMessage());
             return;
         }
 
         // Запись в passed.txt
-        try (PrintWriter writer = new PrintWriter(new FileWriter("passed.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/HomeWork13Files/Files/passed.txt"))) {
             for (String student : passed) {
                 writer.println(student);
             }
-            System.out.println("Студенты с баллом >= " + passingScore + " записаны в passed.txt");
+            System.out.println("Students with marks more than" + passingScore + " saved");
         } catch (IOException e) {
-            System.err.println("Ошибка при записи в passed.txt: " + e.getMessage());
+            System.err.println("Error writing students: " + e.getMessage());
         }
     }
 }

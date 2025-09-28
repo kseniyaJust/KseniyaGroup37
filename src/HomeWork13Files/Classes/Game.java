@@ -1,4 +1,4 @@
-package HomeWork13Files;
+package HomeWork13Files.Classes;
 
 import java.io.File;
 import java.io.FileReader;
@@ -17,13 +17,6 @@ public class Game {
         this.score = score;
     }
 
-    // Геттеры и сеттеры
-    public String getUserName() { return userName; }
-    public void setUserName(String userName) { this.userName = userName; }
-    public int getLvl() { return lvl; }
-    public void setLvl(int lvl) { this.lvl = lvl; }
-    public int getScore() { return score; }
-    public void setScore(int score) { this.score = score; }
 
     // Сохранить игру
     public void saveGame() {
@@ -32,21 +25,21 @@ public class Game {
         props.setProperty("lvl", String.valueOf(lvl));
         props.setProperty("score", String.valueOf(score));
 
-        try (FileWriter writer = new FileWriter("game.save")) {
+        try (FileWriter writer = new FileWriter("src/HomeWork13Files/Files/game.txt")) {
             props.store(writer, "Saved game state");
-            System.out.println("Игра сохранена: " + userName);
+            System.out.println("Save: " + userName);
             Logger.log("Game saved: " + userName);
         } catch (IOException e) {
-            System.err.println("Ошибка при сохранении игры: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
             Logger.log("Save failed: " + e.getMessage());
         }
     }
 
     // Загрузить игру
     public static Game loadGame() {
-        File file = new File("game.save");
+        File file = new File("src/HomeWork13Files/Files/game.txt");
         if (!file.exists()) {
-            System.out.println("Файл сохранения не найден.");
+            System.out.println("No file");
             return null;
         }
 
@@ -59,15 +52,15 @@ public class Game {
             int score = Integer.parseInt(props.getProperty("score", "0"));
 
             Game game = new Game(userName, lvl, score);
-            System.out.println("Игра загружена: " + userName);
+            System.out.println("Load: " + userName);
             Logger.log("Game loaded: " + userName);
             return game;
 
         } catch (IOException e) {
-            System.err.println("Ошибка при чтении файла сохранения: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
             Logger.log("Load failed: " + e.getMessage());
         } catch (NumberFormatException e) {
-            System.err.println("Некорректные данные в файле сохранения.");
+            System.err.println("Invalid data");
             Logger.log("Invalid data in save file.");
         }
         return null;

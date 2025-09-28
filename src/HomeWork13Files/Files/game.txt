@@ -1,0 +1,5 @@
+#Saved game state
+#Sun Sep 28 19:22:14 MSK 2025
+score=25000
+lvl=7
+userName=Alex
