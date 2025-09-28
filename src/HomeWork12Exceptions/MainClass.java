@@ -17,7 +17,7 @@ public class MainClass {
         System.out.println("Confirm password");
         String confirmPassword = scanner.nextLine();
 
-        System.out.println("Valid data: "+ValidData.checkValid(login,password,confirmPassword));
+        System.out.println("Valid data: " + ValidData.checkValid(login, password, confirmPassword));
         scanner.close();
     }
 }
