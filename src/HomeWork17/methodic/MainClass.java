@@ -1,7 +1,6 @@
 package HomeWork17.methodic;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class MainClass {
 
@@ -13,7 +12,7 @@ public class MainClass {
         }
         int sum = numbersList.stream().distinct()
                 .filter(i -> numbersList.indexOf(i) % 2 == 0)
-                .reduce(0, (x, y) -> x + y);
+                .reduce(0, Integer::sum);
         System.out.println(sum);
         //*
         HashMap<Integer, String> data = new HashMap<>();
