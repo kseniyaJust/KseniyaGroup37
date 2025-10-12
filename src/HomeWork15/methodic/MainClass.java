@@ -3,8 +3,10 @@ package HomeWork15.methodic;
 import java.util.Arrays;
 import java.util.HashMap;
 
+
 public class MainClass {
     public static void main(String[] args) {
+
         String[] wordsFor1And2 = new String[]{"add", "cat", "add"};
         System.out.println("Words fo TASK 1_2 " + Arrays.toString(wordsFor1And2));
         System.out.println("----------------");
